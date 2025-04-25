@@ -1,4 +1,5 @@
 import "./App.scss";
+import { ExampleComponent } from "./components/TestComponent/TestComponent";
 
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <h1>Projekt</h1>
       <p>ett övningsprojekt</p>
+      <ExampleComponent />
     </>
   );
 }
