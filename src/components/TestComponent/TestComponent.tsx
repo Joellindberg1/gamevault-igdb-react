@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from 'react';
 import { fetchFromIGDB } from '../../api/igdbService';
 
@@ -18,7 +16,7 @@ export const ExampleComponent = () => {
     const getGameById = async () => {
       try {
         const data = await fetchFromIGDB(
-          'fields name,genres.name,summary; where id = 1020;'
+          'fields *; where id = 1020;'
         );        
         setGames(data); // IGDB returnerar alltid en array
       } catch (error) {
