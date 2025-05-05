@@ -1,7 +1,6 @@
 import "./App.scss";
 import { ExampleComponent } from "./components/TestComponent/TestComponent";
 
-
 function App() {
   return (
     <>

@@ -15,19 +15,20 @@ export const ExampleComponent = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getGames = async () => {
+    const getGameById = async () => {
       try {
-        const data = await fetchFromIGDB('games', 'fields name,genres.name; limit 10;');
-        console.log('IGDB data:', data); // Lägg till denna!
-        setGames(data);
+        const data = await fetchFromIGDB(
+          'fields name,genres.name,summary; where id = 1020;'
+        );        
+        setGames(data); // IGDB returnerar alltid en array
       } catch (error) {
-        console.error('Error fetching games:', error);
+        console.error('Error fetching game by ID:', error);
       } finally {
         setLoading(false);
       }
     };
   
-    getGames();
+    getGameById();
   }, []);
   
 

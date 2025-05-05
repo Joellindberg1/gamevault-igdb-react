@@ -1,13 +1,16 @@
-const express = require('express');
-const fetch = require('node-fetch');
-const cors = require('cors');
-require('dotenv').config();
+import express from 'express';
+import fetch from 'node-fetch';
+import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config({ path: './proxy-server/.env' });
+console.log('Loaded from .env:', process.env.CLIENT_ID, process.env.CLIENT_SECRET);
 
 const app = express();
 const PORT = 4000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.text());
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
@@ -34,7 +37,7 @@ app.post('/api/igdb', async (req, res) => {
       'Authorization': `Bearer ${accessToken}`,
       'Accept': 'application/json'
     },
-    body: req.body.query
+    body: req.body
   });
 
   const data = await igdbResponse.json();
