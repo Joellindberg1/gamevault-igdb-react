@@ -52,3 +52,9 @@ export default tseslint.config({
   },
 })
 ```
+
+
+- - - - - -  
+Typ av mappstruktur = Feature-Oriented Folder Structure. 
+- Komponenter som endast används till en page/Del av sidan byggs som en feature. 
+- Komponenter som används på flera ställen på sidan/appen byggs i "Components" mappen. 
