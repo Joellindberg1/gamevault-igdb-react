@@ -7,6 +7,7 @@ import styles from './Home.module.scss';
 // import { ExampleComponent } from '../../components/TestComponent/TestComponent';
 import PopularGamesSection from '../../features/landingPage/PopularGamesSection';
 import HeroSection from '../../features/landingPage/HeroSection';
+import SectionWrapper from '../../features/landingPage/SectionWrapper';
 
 export default function Home() {
   return (
@@ -37,8 +38,18 @@ export default function Home() {
       <div className={styles.homeWrapper}>
         <Header />
         <main className={styles.main}>
-          <HeroSection />
-          <PopularGamesSection />
+          <SectionWrapper align="left">
+            <HeroSection />
+          </SectionWrapper>
+          <SectionWrapper align="right" className={styles.sectionOverlap1}>
+            <PopularGamesSection />
+          </SectionWrapper>
+          <SectionWrapper align="left" className={styles.sectionOverlap2}>
+            <PopularGamesSection />
+          </SectionWrapper>
+          <SectionWrapper align="right"className={styles.sectionOverlap2}>
+            <PopularGamesSection />
+          </SectionWrapper>
         </main>
         <Footer />
       </div>
