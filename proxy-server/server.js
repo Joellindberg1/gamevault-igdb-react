@@ -16,6 +16,7 @@ const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
 let accessToken = '';
+let tokenTimestamp = 0;
 
 async function getAccessToken() {
   const response = await fetch(`https://id.twitch.tv/oauth2/token`, {
@@ -25,10 +26,20 @@ async function getAccessToken() {
   });
   const data = await response.json();
   accessToken = data.access_token;
+  tokenTimestamp = Date.now();
+}
+
+function isTokenExpired() {
+  // 3600s = 1 timme
+  return Date.now() - tokenTimestamp > 3600 * 1000;
 }
 
 app.post('/api/igdb', async (req, res) => {
-  if (!accessToken) await getAccessToken();
+  console.log('🚀 Incoming IGDB query:', req.body);
+  if (!accessToken || isTokenExpired()) {
+    await getAccessToken();
+  }
+ 
 
   const igdbResponse = await fetch('https://api.igdb.com/v4/games', {
     method: 'POST',
@@ -36,10 +47,12 @@ app.post('/api/igdb', async (req, res) => {
       'Client-ID': CLIENT_ID,
       'Authorization': `Bearer ${accessToken}`,
       'Accept': 'application/json'
+      
     },
+    
     body: req.body
   });
-
+  
   const data = await igdbResponse.json();
   res.json(data);
 });
