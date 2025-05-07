@@ -1,0 +1,41 @@
+.sectionRight {
+    margin-left: auto;
+    margin-right: 2rem;
+    max-width: 900px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #E9F1F7;
+  }
+  
+  .cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .hero {
+    position: absolute;
+    top: 25vh;
+    left: 4rem;
+    z-index: 2;
+    max-width: 600px;
+    color: #E9F1F7;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  }
+  
+  .heroTitle {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  
+  .heroText {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  

@@ -4,7 +4,9 @@ import bg1 from '@/assets/images/Background 1.png';
 import bg2 from '@/assets/images/Background 2.png';
 import bg3 from '@/assets/images/Background 3.png';
 import styles from './Home.module.scss';
-import { ExampleComponent } from '../../components/TestComponent/TestComponent';
+// import { ExampleComponent } from '../../components/TestComponent/TestComponent';
+import PopularGamesSection from '../../features/landingPage/PopularGamesSection';
+import HeroSection from '../../features/landingPage/HeroSection';
 
 export default function Home() {
   return (
@@ -35,7 +37,8 @@ export default function Home() {
       <div className={styles.homeWrapper}>
         <Header />
         <main className={styles.main}>
-          <ExampleComponent />
+          <HeroSection />
+          <PopularGamesSection />
         </main>
         <Footer />
       </div>
