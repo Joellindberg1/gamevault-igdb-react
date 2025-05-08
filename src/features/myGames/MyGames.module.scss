@@ -25,3 +25,36 @@
     }
   }
   
+  .tabSwitcher {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tab {
+    background: none;
+    border: none;
+    color: #E9F1F7;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+  
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+  
+  .activeTab {
+    border-bottom: 2px solid #E9F1F7;
+    font-weight: 800;
+  }
+  
+  .gameGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+  }
+  
