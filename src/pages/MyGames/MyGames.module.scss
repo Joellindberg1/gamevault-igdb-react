@@ -1,0 +1,28 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  
+  .pageWrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
