@@ -6,16 +6,18 @@ export default function SearchToggle() {
 
   return (
     <div className={styles.searchWrapper}>
-      <button className={styles.searchButton} onClick={() => setExpanded(!expanded)}>
-        🔍
+      <button
+        className={styles.searchButton}
+        onClick={() => setExpanded(!expanded)}
+        aria-label="Toggle search"
+      >
+        <i className="fa-solid fa-magnifying-glass"></i>
       </button>
-      {expanded && (
-        <input
-          type="text"
-          className={styles.searchInput}
-          placeholder="Search games..."
-        />
-      )}
+      <input
+        type="text"
+        placeholder="Search..."
+        className={`${styles.searchInput} ${expanded ? styles.expanded : ''}`}
+      />
     </div>
   );
 }
