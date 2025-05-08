@@ -15,7 +15,6 @@ export default function PopularGamesSection() {
       try {
         const data = await fetchFromIGDB(popularGamesQuery);
         setGames(data);
-        console.log(data);
       } catch (err) {
         console.error('Error fetching popular games:', err);
       }
@@ -23,7 +22,6 @@ export default function PopularGamesSection() {
 
     loadGames();
   }, []);
-  console.log('games:', games);
 
   return (
     <section className={styles.sectionRight}>

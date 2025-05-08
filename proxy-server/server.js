@@ -35,7 +35,6 @@ function isTokenExpired() {
 }
 
 app.post('/api/igdb', async (req, res) => {
-  console.log('🚀 Incoming IGDB query:', req.body);
   if (!accessToken || isTokenExpired()) {
     await getAccessToken();
   }
