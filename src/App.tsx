@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="*" element={<Home />} /> //Fallback route 
-        <Route path="/my-games" element={<MyGames />} />
+        <Route path="/mygames" element={<MyGames />} />
         <Route path="/edit-game/:id" element={<EditGame />} />
         <Route path="/game/:id" element={<GameDetail />} />
         <Route path="/favorites" element={<Favorites />} />
