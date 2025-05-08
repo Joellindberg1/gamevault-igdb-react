@@ -42,13 +42,24 @@ export default function Home() {
             <HeroSection />
           </SectionWrapper>
           <SectionWrapper align="right" className={styles.sectionOverlap1}>
-            <PopularGamesSection />
+            <div style={{ marginTop: "-15rem", marginRight: "5rem"}}>
+              <PopularGamesSection />
+            </div>
           </SectionWrapper>
           <SectionWrapper align="left" className={styles.sectionOverlap2}>
-            <PopularGamesSection />
+            <div style={{ marginTop: "-25rem", marginLeft: "5rem"}}>
+              <PopularGamesSection />
+            </div>
           </SectionWrapper>
           <SectionWrapper align="right"className={styles.sectionOverlap2}>
-            <PopularGamesSection />
+            <div style={{ marginTop: "-25rem", marginRight: "5rem"}}>
+              <PopularGamesSection />
+            </div>
+          </SectionWrapper>
+          <SectionWrapper align="left"className={styles.sectionOverlap2}>
+            <div style={{ marginTop: "-25rem", marginLeft: "5rem"}}>
+              <PopularGamesSection />
+            </div>
           </SectionWrapper>
         </main>
         <Footer />
