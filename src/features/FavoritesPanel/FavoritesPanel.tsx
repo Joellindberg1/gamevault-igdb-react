@@ -1,5 +1,5 @@
 
-import FavoriteGameCard from '../../components/GameCard/FavoriteGameCard';
+import FavoriteGameCard from '../../components/GameCard/FavoriteAddon';
 import styles from './FavoritesPanel.module.scss';
 
 export default function FavoritesPanel() {

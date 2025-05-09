@@ -1,9 +1,9 @@
 import styles from './GameCard.module.scss';
-import { GameCard } from './GameCard.Types';
+import { GameCardData } from './GameCard.Types';
 
 
 interface Props {
-  game: GameCard;
+  game: GameCardData;
 }
 
 export default function GameCardBase({ game }: Props) {
