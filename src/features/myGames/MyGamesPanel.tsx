@@ -1,4 +1,3 @@
-
 import EditableAddon from '../../components/GameCard/EditableAddon';
 import GameCardBase from '../../components/GameCard/GameCardBase';
 import styles from './MyGames.module.scss';
@@ -26,13 +25,9 @@ export default function MyGamesPanel() {
   return (
     <div className={styles.gameGrid}>
       {dummyGames.map((game) => (
-        <GameCardBase
-          key={game.id}
-          game={{ ...game, isOwned: true, category: 'owned' }} // lägg till ägande-status
-          addonComponent={
-            <EditableAddon onEditClick={() => navigate(`/editgame/${game.id}`)} />
-          }
-        />
+        <GameCardBase key={game.id} game={{ ...game, isOwned: true, category: 'owned' }}>
+          <EditableAddon onEditClick={() => navigate(`/editgame/${game.id}`)} />
+        </GameCardBase>
       ))}
     </div>
   );

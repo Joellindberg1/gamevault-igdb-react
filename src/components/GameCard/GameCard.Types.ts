@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export type GameCardCategory =
   | 'default'
   | 'favorites'
@@ -21,4 +23,10 @@ export interface GameCardData {
 
   // UI-kategori för hur kortet ska visas
   category: GameCardCategory;
+}
+
+// Add a separate props type for the card component:
+export interface GameCardBaseProps {
+  game: GameCardData;
+  children?: ReactNode;
 }
