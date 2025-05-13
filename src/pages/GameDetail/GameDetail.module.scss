@@ -1,0 +1,135 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.detailPage {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  color: #E9F1F7;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "back back back"
+    "image description stats";
+  gap: 2rem;
+  background-color: rgba(6, 2, 21, 0.7);
+  padding: 2rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 5rem;
+}
+
+.backButtonWrapper {
+  grid-area: back;
+  display: flex;
+  justify-content: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  color: #E9F1F7;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &:focus {
+    outline: 2px solid #fff;
+  }
+}
+
+.backButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: #E9F1F7;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.imageSection {
+  grid-area: image;
+
+  img {
+    width: 100%;
+    max-width: 240px;
+    border-radius: 12px;
+  }
+}
+
+.descriptionSection {
+  grid-area: description;
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  .tags {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .tag {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.3rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.statsSection {
+  grid-area: stats;
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0.3rem 0;
+  }
+
+  .addGameButton {
+    margin-top: 1rem;
+    background: #00ffc8;
+    color: #060215;
+    padding: 0.6rem 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background: #00c7a9;
+    }
+  }
+}
+
+.FavoriteAddon {
+    right: 10rem;
+}
