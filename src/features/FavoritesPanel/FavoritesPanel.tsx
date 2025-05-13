@@ -1,5 +1,5 @@
 
-import FavoriteGameCard from '../../components/GameCard/FavoriteAddon';
+import FavoriteAddon from '../../components/GameCard/FavoriteAddon';
 import styles from './FavoritesPanel.module.scss';
 
 export default function FavoritesPanel() {
@@ -12,7 +12,10 @@ export default function FavoritesPanel() {
   return (
     <div className={styles.favoritesGrid}>
       {favoriteGames.map((game) => (
-        <FavoriteGameCard key={game.id} game={game} />
+        <FavoriteAddon
+          game={game}
+          isFavorite={game.favorite ?? false}
+        />
       ))}
     </div>
   );
