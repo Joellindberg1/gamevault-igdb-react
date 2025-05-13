@@ -1,10 +1,7 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
+import { GameCardData } from '../components/GameCard/GameCard.Types';
 
-interface Game {
-  id: number;
-  name: string;
-  image: string;
-}
+type Game = GameCardData;
 
 interface GameContextType {
   myGames: Game[];
