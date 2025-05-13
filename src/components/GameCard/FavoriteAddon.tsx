@@ -1,33 +1,27 @@
-import styles from './GameCard.module.scss';
-
-import { faHeartCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+import { GameCardData } from './GameCard.Types';
 import { useMyGames } from '../../contexts/GameContext';
 
 interface Props {
-  game: {
-    id: number;
-    name: string;
-    image: string;
-  };
+  game: GameCardData;
 }
 
-export default function FavoriteGameCard({ game }: Props) {
-  const { toggleFavorite } = useMyGames();
+export default function FavoriteAddon({ game }: Props) {
+  const { toggleFavorite, isFavorite } = useMyGames();
+  const favorite = isFavorite(game.id);
 
   return (
-    <div className={styles.card}>
-      <img src={game.image} alt={game.name} className={styles.image} />
-      <div className={styles.info}>
-        <h3>{game.name}</h3>
-        <button
-          className={styles.unfavoriteButton}
-          onClick={() => toggleFavorite(game)}
-          aria-label={`Remove ${game.name} from favorites`}
-        >
-          <FontAwesomeIcon icon={faHeartCircleXmark} />
-        </button>
-      </div>
-    </div>
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        toggleFavorite(game);
+      }}
+      className={!favorite ? 'not-favorited' : ''}
+      aria-label={`Toggle favorite for ${game.name}`}
+    >
+      <FontAwesomeIcon icon={favorite ? solidHeart : regularHeart} className={!favorite ? 'not-favorited' : ''} />
+    </button>
   );
 }

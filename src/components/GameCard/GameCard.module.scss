@@ -1,14 +1,3 @@
-.card {
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 12px;
-    overflow: hidden;
-    width: 160px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: #E9F1F7;
-  }
-  
   .image {
     width: 100%;
     height: 220px;
@@ -82,4 +71,65 @@
       color: #ff6961;
     }
   }
-  
+
+  .addon {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 1.25rem;
+  color: #E9F1F7;
+  z-index: 2;
+
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+  }
+}
+
+
+.cardWrapper {
+  position: relative;
+}
+
+.addonTopRight {
+  position: absolute;
+
+  z-index: 2;
+
+  button {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    // color: #ff4d6d;
+    cursor: pointer;
+
+    &:hover {
+      // color: #E9F1F7;
+    }
+  }
+}
+
+.position-default {
+  right: 0.55rem;
+}
+
+.position-detail {
+  top: -0.05rem;
+  right: 2.1rem;
+}
+
+button svg {
+  transition: color 0.3s ease;
+  color: #ff4d6d; // 🔴 standard = röd
+}
+
+button.not-favorited svg {
+  color: #E9F1F7; // 🤍 blir vit om ej favorit
+}
+
+button.not-favorited:hover svg {
+  color: #ccc; // 🌫️ grå vid hover
+}

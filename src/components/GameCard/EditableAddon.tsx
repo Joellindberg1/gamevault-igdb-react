@@ -7,7 +7,10 @@ interface Props {
 
 export default function EditableAddon({ onEditClick }: Props) {
   return (
-    <button onClick={onEditClick} aria-label="Edit game">
+    <button onClick={(e) => {
+      e.stopPropagation(); // 👈 Hindrar navigation
+      onEditClick();
+    }}>
       <FontAwesomeIcon icon={faPen} />
     </button>
   );
